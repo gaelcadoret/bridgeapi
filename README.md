@@ -12,6 +12,16 @@ npm start
 
 The local server run on port 3000
 
+## Running tests
+```
+npm test
+npm run test:watch
+```
+
+## Running tests coverage
+```
+npm run test:cov
+```
 
 ## Infos
 
