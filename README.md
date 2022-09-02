@@ -6,6 +6,7 @@ This is an API used for technical tests
 
 ```
 npm install
+npm run init
 npm start
 ```
 
