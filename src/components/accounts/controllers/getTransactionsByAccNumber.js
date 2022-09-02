@@ -6,11 +6,17 @@ module.exports = async (req, res) => {
       // TODO : add validation and security check
       const { acc_number } = req.params;
 
-      return res.status(200).json(
-          successResponse({
-              data: getTransactionsByAccNumber(acc_number)
-          })
-      );
+      const transactionsByAccNumber = getTransactionsByAccNumber(acc_number);
+
+      return transactionsByAccNumber
+        ? res.status(200).json(
+              successResponse({
+                  data: transactionsByAccNumber
+              })
+          )
+        : res.status(404).json(
+              errorResponse("No transactions have been found for this account number!")
+          );
 
     } catch (e) {
       console.error(e.message);
